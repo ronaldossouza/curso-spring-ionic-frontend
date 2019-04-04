@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HTTP_INTERCEPTORS, HttpRequest, HttpHandler, HttpInterceptor, HttpEvent } from "@angular/common/http";
 
