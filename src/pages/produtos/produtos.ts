@@ -24,7 +24,6 @@ export class ProdutosPage {
       },
       error => {});
   }
-
   loadImageUrls() {
     for (var i=0; i<this.items.length; i++) {
       let item = this.items[i];
@@ -34,5 +33,9 @@ export class ProdutosPage {
         },
         error => {});
     }
+  }
+
+  showDetail() {
+    this.navCtrl.push('ProdutoDetailPage');
   }
 }
