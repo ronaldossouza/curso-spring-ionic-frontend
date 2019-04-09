@@ -5,6 +5,7 @@ import { Cart } from "../models/cart";
 
 @Injectable()
 export class StorageService {
+
     getLocalUser() : LocalUser {
         let usr = localStorage.getItem(STORAGE_KEYS.localUser);
         if (usr == null) {
@@ -14,6 +15,7 @@ export class StorageService {
             return JSON.parse(usr);
         }
     }
+
     setLocalUser(obj : LocalUser) {
         if (obj == null) {
             localStorage.removeItem(STORAGE_KEYS.localUser);
