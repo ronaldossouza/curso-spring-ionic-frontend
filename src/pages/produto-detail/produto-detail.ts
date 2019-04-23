@@ -14,7 +14,6 @@ export class ProdutoDetailPage {
 
   item: ProdutoDTO;
 
-
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -23,7 +22,6 @@ export class ProdutoDetailPage {
   }
 
   ionViewDidLoad() {
-
     let produto_id = this.navParams.get('produto_id');
     this.produtoService.findById(produto_id)
       .subscribe(response => {

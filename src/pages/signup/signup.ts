@@ -14,9 +14,11 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+
   formGroup: FormGroup;
   estados: EstadoDTO[];
   cidades: CidadeDTO[];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -44,6 +46,7 @@ export class SignupPage {
       cidadeId : [null, [Validators.required]]
     });
   }
+
   ionViewDidLoad() {
     this.estadoService.findAll()
       .subscribe(response => {
@@ -53,6 +56,7 @@ export class SignupPage {
       },
       error => {});
   }
+
   updateCidades() {
     let estado_id = this.formGroup.value.estadoId;
     this.cidadeService.findAll(estado_id)
