@@ -75,7 +75,7 @@ export class ProdutosPage {
     this.loadData();
     setTimeout(() => {
       refresher.complete();
-    }, 1000);
+    }, 2000);
   }
 
   doInfinite(infiniteScroll) {
@@ -83,6 +83,6 @@ export class ProdutosPage {
     this.loadData();
     setTimeout(() => {
       infiniteScroll.complete();
-    }, 1000);
+    }, 2000);
   }
 }
