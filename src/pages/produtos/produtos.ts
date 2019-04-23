@@ -54,6 +54,7 @@ export class ProdutosPage {
         },
         error => {});
     }
+
   }
 
   showDetail(produto_id : string) {
@@ -62,7 +63,7 @@ export class ProdutosPage {
 
   presentLoading() {
     let loader = this.loadingCtrl.create({
-      content: "Aguarde..."
+      content: "Carregando..."
     });
     loader.present();
     return loader;
