@@ -7,14 +7,12 @@ import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { CartService } from '../../services/domain/cart.service';
 import { PedidoService } from '../../services/domain/pedido.service';
-
 @IonicPage()
 @Component({
   selector: 'page-order-confirmation',
   templateUrl: 'order-confirmation.html',
 })
 export class OrderConfirmationPage {
-
   pedido: PedidoDTO;
   cartItems: CartItem[];
   cliente: ClienteDTO;
@@ -27,13 +25,10 @@ export class OrderConfirmationPage {
     public clienteService: ClienteService,
     public cartService: CartService,
     public pedidoService: PedidoService) {
-
     this.pedido = this.navParams.get('pedido');
   }
-
   ionViewDidLoad() {
     this.cartItems = this.cartService.getCart().items;
-
     this.clienteService.findById(this.pedido.cliente.id)
       .subscribe(response => {
         this.cliente = response as ClienteDTO;
@@ -43,16 +38,13 @@ export class OrderConfirmationPage {
         this.navCtrl.setRoot('HomePage');
       });
   }
-
   private findEndereco(id: string, list: EnderecoDTO[]) : EnderecoDTO {
     let position = list.findIndex(x => x.id == id);
     return list[position];
   }
-
   total() : number {
     return this.cartService.total();
   }
-
   back() {
     this.navCtrl.setRoot('CartPage');
   }
